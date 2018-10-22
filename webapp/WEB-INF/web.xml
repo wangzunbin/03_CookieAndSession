@@ -14,18 +14,36 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	version="3.0" metadata-complete="true">
+	version="3.0" metadata-complete="false">
 
 	<servlet>
-		<servlet-name>HelloKittyServlet</servlet-name>
-		<servlet-class>com.wangzunbin._01_hello.HelloKittyServlet</servlet-class>
+		<servlet-name>MappingServlet</servlet-name>
+		<servlet-class>com.wangzunbin._01_detail.MappingServlet</servlet-class>
+		<!-- 配置servlet初始化的时候, 数字越小越先执行 -->
+		<!-- <load-on-startup>0</load-on-startup> -->
 	</servlet>
-	
+	<!-- <servlet>
+		<servlet-name>AnnoServlet</servlet-name>
+		<servlet-class>com.wangzunbin._02_anno.AnnoServlet</servlet-class>
+		配置servlet初始化的时候, 数字越小越先执行
+		<load-on-startup>0</load-on-startup>
+	</servlet> -->
 
 	<!-- 匹配 -->
 	<servlet-mapping>
-		<servlet-name>HelloKittyServlet</servlet-name>
-		<url-pattern>/hello</url-pattern>
+		<servlet-name>MappingServlet</servlet-name>
+		<url-pattern>/mapping</url-pattern>
+		<url-pattern>/mapping2</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>MappingServlet</servlet-name>
+		<url-pattern>/mapping3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MappingServlet</servlet-name>
+		<url-pattern>*.wangzunbin</url-pattern>
+	</servlet-mapping>
+
+	<!-- <servlet-mapping> <servlet-name>AnnoServlet</servlet-name> <url-pattern>/anno</url-pattern> 
+		</servlet-mapping> -->
 </web-app>
